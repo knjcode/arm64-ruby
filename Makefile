@@ -1,11 +1,11 @@
-DOCKER_IMAGE_VERSION=2.4.2
+DOCKER_IMAGE_VERSION=2.5.0
 DOCKER_IMAGE_NAME=knjcode/arm64-ruby
 DOCKER_IMAGE_TAGNAME=$(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_VERSION)
 
 default: build
 
 build:
-	docker pull aarch64/debian:jessie
+	docker pull aarch64/debian:stretch
 	docker build -t $(DOCKER_IMAGE_TAGNAME) .
 	docker tag $(DOCKER_IMAGE_TAGNAME) $(DOCKER_IMAGE_NAME):latest
 
